@@ -1,1 +1,1 @@
-# draw-a-cat
+# Draw a cat
