@@ -99,7 +99,7 @@ async function requestNewCat(ws) {
   console.log(newCatData);
 
 
-  const seconds = Math.floor(Math.random() * 170) + 30;
+  const seconds = Math.floor(Math.random() * 10) + 3;
   broadcast(ws.roomCode, {
     type: "newCat",
     catData: newCatData,

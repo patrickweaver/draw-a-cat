@@ -1,11 +1,10 @@
 # Frontend
 
 - Hide request button until websocket is connected
-- Hide cat when timer runs out
 - Play sound when timer runs out
-- Hide timer when timer runs out
 - Display room code
 - Switch to time when timer should expire
+- Fade out cat when timer runs out
 
 
 # Server

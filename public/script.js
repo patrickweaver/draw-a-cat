@@ -9,6 +9,7 @@ const cat = document.getElementById("cat");
 const countdown = document.getElementById("countdown");
 const roomCodeSpan = document.getElementById("room-code");
 const roomCodeInput = document.getElementById("room-code-input");
+const soundElement = document.getElementById("sound");
 
 /* - - - - - - - - - -
    Setup Websocket:
@@ -108,10 +109,17 @@ async function showNewCat(catData, seconds) {
     countdown.innerHTML = `<span id="seconds-remaining">${seconds}</span> seconds remaining`
     const secondsRemaining = document.getElementById("seconds-remaining");
     
-    setInterval(() => {
+    const timer = setInterval(() => {
       seconds--;
-      secondsRemaining.innerHTML = seconds;
       currentSeconds = seconds;
+      if (seconds === -1) {
+        soundElement.play();
+        countdown.innerHTML = "";
+        cat.innerHTML = "";
+        clearInterval(timer);
+        return;
+      }
+      secondsRemaining.innerHTML = seconds;
     }, 1000)
    
   } catch (error) {
@@ -119,4 +127,9 @@ async function showNewCat(catData, seconds) {
     console.log("Error in showNewCat()");
     console.log(error);
   }
+}
+
+function playSound() {
+  const soundElement = document.getElementById('sound');
+  soundElement.play();
 }
