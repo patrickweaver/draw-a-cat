@@ -52,6 +52,10 @@ connection.onmessage = function(message) {
 
 function createRoom() {
   roomCode = Math.random().toString(36).substr(2, 4).toUpperCase();
+  roomCode = roomCode.replace("I", "W");
+  roomCode = roomCode.replace("L", "X");
+  roomCode = roomCode.replace("O", "Y");
+  roomCode = roomCode.replace("0", "Z");
   roomCodeSpan.innerHTML = roomCode;
   roomSound = Math.ceil(Math.random() * 7);
   soundSource.src = "" + roomSound + ".mp3";
