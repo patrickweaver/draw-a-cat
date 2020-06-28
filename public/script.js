@@ -69,7 +69,7 @@ function createRoom() {
 }
 
 function requestJoinRoom() {
-  roomCode = roomCodeInput.value;
+  roomCode = roomCodeInput.value.toUpperCase();
   roomCodeSpan.innerHTML = roomCode;
   connection.send(
     JSON.stringify({
