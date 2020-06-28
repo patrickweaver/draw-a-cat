@@ -26,7 +26,7 @@
       Room Code: <span id="room-code"></span>
     </h3>
     
-    <form onsubmit="event.preventDefault(); requestJoinRoom();">
+    <form id="join-room" onsubmit="event.preventDefault(); requestJoinRoom();">
       <label>Join a new room:</label>
       <input type="text" id="room-code-input" />
       <button type="submit">
@@ -34,21 +34,27 @@
       </button>
     </form>
     
-    <button onclick="requestNewCat()">
-      New Cat!
-    </button>
+    <hr/>
     
-    <h2 id="countdown">
+    <div id="cat-area">
       
-    </h2>
-    
-    <div id="cat">
+      <button onclick="requestNewCat()">
+        New Cat!
+      </button>
+
+      <h2 id="countdown">
+
+      </h2>
+
+      <div id="cat">
+
+      </div>
+
+      <audio id="sound">
+        <source src="sounds/1.mp3" type="audio/mpeg" id="sound-source">
+      </audio>
       
     </div>
-    
-    <audio id="sound">
-      <source src="sounds/1.mp3" type="audio/mpeg">
-    </audio>
     
     
     <!-- Cat alarm sounds from http://www.orangefreesounds.com/ -->
