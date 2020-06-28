@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="A cool thing made with Glitch">
 
-    <title>Welcome to Glitch!</title>
+    <title>Draw a Cat!</title>
 
     <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
     <!-- import the webpage's stylesheet -->
@@ -22,7 +22,19 @@
       Draw a cat!
     </h1>
     
-    <button onclick="newCat()">
+    <h3 id="room-code-container">
+      Room Code: <span id="room-code"></span>
+    </h3>
+    
+    <form onsubmit="event.preventDefault(); requestJoinRoom();">
+      <label>Join a new room:</label>
+      <input type="text" id="room-code-input" />
+      <button type="submit">
+        Submit
+      </button>
+    </form>
+    
+    <button onclick="requestNewCat()">
       New Cat!
     </button>
     
@@ -33,10 +45,17 @@
     <div id="cat">
       
     </div>
+    
+    <audio id="sound">
+      <source src="sounds/1.mp3" type="audio/mpeg">
+    </audio>
+    
+    
+    <!-- Cat alarm sounds from http://www.orangefreesounds.com/ -->
 
     <!-- include the Glitch button to show what the webpage is about and
-          to make it easier for folks to view source and remix -->
+          to make it easier for folks to view source and remix 
     <div class="glitchButton" style="position:fixed;top:2em;right:20px;"></div>
-    <script src="https://button.glitch.me/button.js" defer></script>
+    <script src="https://button.glitch.me/button.js" defer></script>-->
   </body>
 </html>
