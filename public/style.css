@@ -14,3 +14,12 @@ body {
   max-height: 500px;
   height: auto;
 }
+
+#join-room, #cat-area {
+  margin: 1.5em 0;
+}
+
+button {
+  font-size: 16px;
+  line-height: 18px;
+}

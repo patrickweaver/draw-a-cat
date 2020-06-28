@@ -9,7 +9,7 @@ const cat = document.getElementById("cat");
 const countdown = document.getElementById("countdown");
 const roomCodeSpan = document.getElementById("room-code");
 const roomCodeInput = document.getElementById("room-code-input");
-const soundElement = document.getElementById("sound");
+const soundSource = document.getElementById("sound-source");
 
 /* - - - - - - - - - -
    Setup Websocket:
@@ -51,9 +51,10 @@ connection.onmessage = function(message) {
 };
 
 function createRoom() {
-  roomCode = Math.random().toString(36).substr(2, 6);
+  roomCode = Math.random().toString(36).substr(2, 4).toUpperCase();
   roomCodeSpan.innerHTML = roomCode;
   roomSound = Math.ceil(Math.random() * 7);
+  soundSource.src = "" + roomSound + ".mp3";
   connection.send(
     JSON.stringify({
       type: "newRoom",
@@ -113,7 +114,7 @@ async function showNewCat(catData, seconds) {
       seconds--;
       currentSeconds = seconds;
       if (seconds === -1) {
-        soundElement.play();
+        playSound();
         countdown.innerHTML = "";
         cat.innerHTML = "";
         clearInterval(timer);
